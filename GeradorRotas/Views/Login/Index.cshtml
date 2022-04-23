@@ -1,0 +1,55 @@
+﻿@model Models.Usuario
+@*@model IEnumerable<RouteMaster.Frontend.Models.Equip>*@
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login de Usuário</h1>
+<br />
+
+@if (@ViewBag.Authenticate)
+{
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Olá, @ViewBag.User!</h5>
+        </div>
+    </div>
+    <br />
+    if (@ViewBag.Role == "adm")
+    {
+        <p>
+            Deseja criar uma conta?
+            <a asp-action="Create">Criar Conta</a>
+        </p>
+    }
+}
+else
+{
+    <h4>Bem-Vindo</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Usuarionome" class="control-label"></label>
+                    <input asp-for="Usuarionome" class="form-control" />
+                    <span asp-validation-for="Usuarionome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Senha" class="control-label"></label>
+                    <input type="senha" asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="enviar" value="Entrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h2>@ViewData["Message"]</h2>
+}
+
+

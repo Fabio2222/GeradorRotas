@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Models.Equipe>
+
+@{
+    ViewData["Title"] = "Equipes";
+}
+
+<h1>Equipes</h1>
+
+<h4>Escolha das Equipes para a cidade de: @ViewBag.City</h4>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <form asp-action="GenerateRoute">
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <input type="checkbox" name="selectedEquips" value="@item.Nome" id="@item.Nome" class="form-check-inline" />
+                    <label for="@item.Nome">@item.Nome</label>
+                    <br />
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    <select>
+                            @for (var i = 0; i < item.Pessoas.Count; i++)
+                            {
+                            <option value="@item.Pessoas[i].Nome">@item.Pessoas[i].Nome</option>
+                            }
+                    </select>
+                </td>
+            </tr>
+            <br />
+            }
+        <div class="form-group">
+            <input type="enviar" value="Enviar" class="btn btn-primary" />
+        </div>
+        </form>
+    </tbody>
+</table>

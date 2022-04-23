@@ -1,0 +1,45 @@
+﻿@model Models.Equipe
+
+@{
+    ViewData["Title"] = "Remover Equipe";
+}
+
+<h1>Apagar</h1>
+
+<h3>Você realmente deseja remover essa equipe?</h3>
+<div>
+    <br />
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pessoas)
+        </dt>
+        <dd class="col-sm-10">
+            <select>
+                @for (var i = 0; i < Model.Pessoas.Count; i++)
+                {
+                    <option value="@Model.Pessoas[i].Nome">@Model.Pessoas[i].Nome</option>
+                }
+            </select>
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Remover" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para a listagem</a>
+    </form>
+</div>
+
