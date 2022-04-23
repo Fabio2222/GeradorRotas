@@ -10,7 +10,7 @@ namespace GeradorRotas.Frontend.Service
 {
     public class ConnectToUsuarioApi
     {
-        private readonly static string _baseUri = "https://localhost:44309/api/"; //mudar
+        private readonly static string _baseUri = "https://localhost:44321/api/"; //mudar
 
         public async Task<List<Usuario>> GetUsers()
         {
@@ -23,7 +23,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiUser");
+                    HttpResponseMessage response = await client.GetAsync("ApiUsuario");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -59,7 +59,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiUser/login/" + username);
+                    HttpResponseMessage response = await client.GetAsync("ApiUsuario/login/" + username);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -94,7 +94,7 @@ namespace GeradorRotas.Frontend.Service
 
                     var json = JsonConvert.SerializeObject(usuario);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync("ApiUser", content);
+                    var result = await client.PostAsync("ApiUsuario", content);
 
                     if (result.IsSuccessStatusCode)
                         return usuario;

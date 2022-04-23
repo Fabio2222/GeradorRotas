@@ -117,7 +117,7 @@ namespace GeradorRotas.Frontend.Controllers
 
             cidades = cidades.Distinct().ToList();
 
-            ViewBag.Cidades = cidades;
+            ViewBag.Cities = cidades;
             ViewBag.Service = service;
 
             WriteFiles.WriteStringInFolder(null, service, "service", _appEnvironment.WebRootPath);
@@ -140,14 +140,14 @@ namespace GeradorRotas.Frontend.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> GenerateRoute(List<string> selectedEquipes)
+        public async Task<ActionResult> GeradorRota(List<string> selectedEquipes)
         {
             List<Equipe> listEquipesByEquipeNome = new();
 
             listEquipesByEquipeNome = await new ConnectToEquipeApi().GetEquipsByEquipsName(selectedEquipes);
 
             var service = ReadFiles.ReadFileStringInFolder("service", _appEnvironment.WebRootPath);
-            var cidade = ReadFiles.ReadFileStringInFolder("cidade", _appEnvironment.WebRootPath);
+            var cidade = ReadFiles.ReadFileStringInFolder("city", _appEnvironment.WebRootPath);
             var columns = ReadFiles.ReadFileInFolder("headers", _appEnvironment.WebRootPath);
             var dataBySelectedHeaders = ReadFiles.ReadExcelFile(columns, _appEnvironment.WebRootPath);
 

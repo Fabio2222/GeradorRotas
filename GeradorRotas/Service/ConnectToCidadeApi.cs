@@ -10,7 +10,7 @@ namespace GeradorRotas.Frontend.Service
 {
     public class ConnectToCidadeApi
     {
-        private readonly static string _baseUri = "https://localhost:44334/api/"; //mudar
+        private readonly static string _baseUri = "https://localhost:44330/api/"; //mudar
 
         public async Task<List<Cidade>> GetCities()
         {

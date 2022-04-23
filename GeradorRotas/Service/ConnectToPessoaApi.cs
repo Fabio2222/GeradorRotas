@@ -10,7 +10,7 @@ namespace GeradorRotas.Frontend.Service
 {
     public class ConnectToPessoaApi
     {
-        private readonly static string _baseUri = "https://localhost:44378/api/";
+        private readonly static string _baseUri = "https://localhost:44313/api/";
 
         public async Task<List<Pessoa>> GetPeople()
         {
@@ -23,7 +23,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiPesoa");
+                    HttpResponseMessage response = await client.GetAsync("ApiPessoa");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -59,7 +59,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiPerson/" + id);
+                    HttpResponseMessage response = await client.GetAsync("ApiPessoa/" + id);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -95,7 +95,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiPessoa/nome/" + nome);
+                    HttpResponseMessage response = await client.GetAsync("ApiPessoa/name/" + nome);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -130,7 +130,7 @@ namespace GeradorRotas.Frontend.Service
 
                     var json = JsonConvert.SerializeObject(pessoas);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync("ApiPerson", content);
+                    var result = await client.PostAsync("ApiPessoa", content);
 
                     if (result.IsSuccessStatusCode)
                         return pessoas;
@@ -161,7 +161,7 @@ namespace GeradorRotas.Frontend.Service
 
                     var json = JsonConvert.SerializeObject(pessoa);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var result = await client.PutAsync($"ApiPerson/{pessoa.Id}", content);
+                    var result = await client.PutAsync($"ApiPessoa/{pessoa.Id}", content);
 
                     if (result.IsSuccessStatusCode)
                         return pessoa;

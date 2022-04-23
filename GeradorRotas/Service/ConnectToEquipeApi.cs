@@ -10,7 +10,7 @@ namespace GeradorRotas.Frontend.Service
 {
     public class ConnectToEquipeApi
     {
-        private readonly static string _baseUri = "https://localhost:44338/api/"; // mudar
+        private readonly static string _baseUri = "https://localhost:44370/api/"; // mudar
 
         public async Task<List<Equipe>> GetEquipes()
         {
@@ -59,7 +59,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiEquip/" + id);
+                    HttpResponseMessage response = await client.GetAsync("ApiEquipe/" + id);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -96,7 +96,7 @@ namespace GeradorRotas.Frontend.Service
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     client.BaseAddress = new Uri(_baseUri);
 
-                    HttpResponseMessage response = await client.GetAsync("ApiEquip/city/" + cidade);
+                    HttpResponseMessage response = await client.GetAsync("ApiEquipe/city/" + cidade);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -135,7 +135,7 @@ namespace GeradorRotas.Frontend.Service
 
                     foreach (var equipeNome in equipesNome)
                     {
-                        HttpResponseMessage response = await client.GetAsync("ApiEquip/equip/" + equipeNome);
+                        HttpResponseMessage response = await client.GetAsync("ApiEquipe/equip/" + equipeNome);
 
                         if (response.IsSuccessStatusCode)
                         {
@@ -173,7 +173,7 @@ namespace GeradorRotas.Frontend.Service
 
                     var json = JsonConvert.SerializeObject(equipe);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync("ApiEquip", content);
+                    var result = await client.PostAsync("ApiEquipe", content);
 
                     if (result.IsSuccessStatusCode)
                         return equipe;
@@ -204,7 +204,7 @@ namespace GeradorRotas.Frontend.Service
                 {
                     client.BaseAddress = new Uri(_baseUri);
 
-                    var result = await client.DeleteAsync($"ApiEquip/{id}");
+                    var result = await client.DeleteAsync($"ApiEquipe/{id}");
 
                     if (result.IsSuccessStatusCode)
                         equipe.Error = "ok";

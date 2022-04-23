@@ -42,7 +42,7 @@ namespace ApiUsuario.Controllers
             return usuario;
         }
 
-        [HttpGet("login/{username}")]
+        [HttpGet("login/{usuarionome}")]
         public ActionResult<Usuario> GetUserByUsername(string usuarionome)
         {
             var usuario = _usuarioService.GetUserByUsername(usuarionome);

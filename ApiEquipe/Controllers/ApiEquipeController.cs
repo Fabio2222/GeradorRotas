@@ -39,9 +39,9 @@ namespace ApiEquipe.Controllers
         }
 
         [HttpGet("city/{city}")]
-        public ActionResult<List<Equipe>> GetCidade(string cidade)
+        public ActionResult<List<Equipe>> GetCidade(string city)
         {
-            var equipes = _equipeService.GetCidade(cidade);
+            var equipes = _equipeService.GetCidade(city);
 
             if (equipes == null)
                 return NotFound();
@@ -50,9 +50,9 @@ namespace ApiEquipe.Controllers
         }
 
         [HttpGet("equip/{equipName}")]
-        public ActionResult<Equipe> GetEquipesByNomeEquipe(string nomeEquipe)
+        public ActionResult<Equipe> GetEquipesByNomeEquipe(string equipName)
         {
-            var equipe = _equipeService.GetEquipesByEquipeNome(nomeEquipe);
+            var equipe = _equipeService.GetEquipesByEquipeNome(equipName);
 
             if (equipe == null)
                 return NotFound();
