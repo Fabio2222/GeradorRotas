@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
+using GeradorRotas.Frontend.Service;
 using GeradorRotas.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Models;
 
 namespace GeradorRotas.Frontend.Controllers
 {
@@ -37,7 +39,11 @@ namespace GeradorRotas.Frontend.Controllers
                 authenticate = false;
                 ViewBag.Role = "";
             }
-
+            var usuarios = await new ConnectToUsuarioApi().GetUsers();
+            if (usuarios.Count < 1)
+            {
+                await new ConnectToUsuarioApi().CreateNewUser(new Usuario() { Usuarionome = "adm", Senha = "adm", Regra = "adm"});
+            }
             ViewBag.User = user;
             ViewBag.Authenticate = authenticate;
 

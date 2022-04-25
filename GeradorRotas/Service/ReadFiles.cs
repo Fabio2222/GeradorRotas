@@ -71,7 +71,7 @@ namespace GeradorRotas.Frontend.Service
                 var line = reader.ReadLine();
                 while (line != null)
                 {
-                    cities.Add(new Pessoa { Nome = line.Trim().Replace(",", "").Replace("\"", "") });
+                    cities.Add(new Pessoa { Nome = line.Trim().Replace(",", "").Replace("\"", "").ToUpper() });
                     line = reader.ReadLine();
                 }
             }
@@ -94,7 +94,7 @@ namespace GeradorRotas.Frontend.Service
 
                 int cols = worksheet.Dimension.End.Column;
 
-                for (int i = 1; i < cols; i++)
+                for (int i = 1; i < cols + 1; i++)
                 {
                     headerExcel.Add(worksheet.Cells[1, i].Value.ToString());
                 }
@@ -120,7 +120,7 @@ namespace GeradorRotas.Frontend.Service
                 int cols = worksheet.Dimension.End.Column;
                 int rows = worksheet.Dimension.End.Row;
 
-                for (int col = 1; col < cols; col++)
+                for (int col = 1; col < cols + 1; col++)
                 {
                     if (worksheet.Cells[1, col].Value.ToString() == nameColumn)
                     {
@@ -163,7 +163,7 @@ namespace GeradorRotas.Frontend.Service
                 {
                     data = new Dictionary<string, string>();
 
-                    for (int col = 1; col < cols; col++)
+                    for (int col = 1; col < cols + 1; col++)
                     {
                         columns.ForEach(column =>
                         {
