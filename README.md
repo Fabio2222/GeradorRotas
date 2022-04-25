@@ -12,17 +12,17 @@ Não exibe as pessoas da equipe. Problema em equipecontrollers linha 36.
 
 View equipe index. Deleta pessoa de equipe, em vez de mudar status no banco de dados.
 
-Cadastro de Usuário
+Cadastro de Usuário - 
 Contém nome de usuário, senha e nome completo.
 
-Cadastro de Pessoas
+Cadastro de Pessoas - 
 Contém o nome completo.
 
-Cadastro de Cidade
+Cadastro de Cidade - 
 Contém o nome da cidade e o estado a que ela pertence.
 
-Cadastro de Equipe
+Cadastro de Equipe - 
 Contém o nome, com pelo menos 1 pessoa vinculada na equipe e a cidade ao qual ela está disponível.
 
-Gerador de Rota
+Gerador de Rota - 
 Recebe o upload de um arquivo em formato XLSX que contém os dados necessários para confecção da rota.
