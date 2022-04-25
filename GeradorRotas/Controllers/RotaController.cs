@@ -140,11 +140,11 @@ namespace GeradorRotas.Frontend.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> GeradorRota(List<string> selectedEquipes)
+        public async Task<ActionResult> GeradorRota(List<string> equipesSelecionadas)
         {
             List<Equipe> listEquipesByEquipeNome = new();
 
-            listEquipesByEquipeNome = await new ConnectToEquipeApi().GetEquipsByEquipsName(selectedEquipes);
+            listEquipesByEquipeNome = await new ConnectToEquipeApi().GetEquipsByEquipsName(equipesSelecionadas);
 
             var service = ReadFiles.ReadFileStringInFolder("service", _appEnvironment.WebRootPath);
             var cidade = ReadFiles.ReadFileStringInFolder("city", _appEnvironment.WebRootPath);
@@ -449,20 +449,20 @@ namespace GeradorRotas.Frontend.Controllers
             historyGenerateFile.Servico = service;
             historyGenerateFile.Cidade = cidade;
             historyGenerateFile.Colunas = columns;
-            historyGenerateFile.Equipes = selectedEquipes;
+            historyGenerateFile.Equipes = equipesSelecionadas;
             historyGenerateFile.NomeArquivo = nameFile;
             historyGenerateFile.CaminhoArquivo = _appEnvironment.WebRootPath + "\\File\\" + nameFile;
 
             _gRotasService.Create(historyGenerateFile);
 
             RemoveFiles.RemoveFromFolder("headers", ".txt", _appEnvironment.WebRootPath);
-            RemoveFiles.RemoveFromFolder("service", ".txt", _appEnvironment.WebRootPath);
-            RemoveFiles.RemoveFromFolder("city", ".txt", _appEnvironment.WebRootPath);
+           // RemoveFiles.RemoveFromFolder("service", ".txt", _appEnvironment.WebRootPath);
+          //  RemoveFiles.RemoveFromFolder("city", ".txt", _appEnvironment.WebRootPath);
 
             return View();
         }
 
-        public ActionResult DownloadFiles()
+      /*  public ActionResult DownloadFiles()
         {
             string usuario = "Anonymous";
             bool authenticate = false;
@@ -499,9 +499,9 @@ namespace GeradorRotas.Frontend.Controllers
 
 
             return View();
-        }
+        }*/
 
-        /*
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public FileResult DownloadFile()
@@ -526,7 +526,7 @@ namespace GeradorRotas.Frontend.Controllers
 
             return File(bytes, contentType, nameFile);
         }
-        */
+        
 
         public async Task<IActionResult> Delete(string id)
         {

@@ -6,7 +6,7 @@
 
 <h1>Equipes</h1>
 
-<h4>Escolha das Equipes para a cidade de: @ViewBag.City</h4>
+<h4>Escolha das Equipes para a cidade de: @ViewBag.Cidade</h4>
 <hr />
 
 <table class="table">
@@ -30,7 +30,7 @@
             {
             <tr>
                 <td>
-                    <input type="checkbox" name="selectedEquips" value="@item.Nome" id="@item.Nome" class="form-check-inline" />
+                    <input type="checkbox" name="equipesSelecionadas" value="@item.Nome" id="@item.Nome" class="form-check-inline" />
                     <label for="@item.Nome">@item.Nome</label>
                     <br />
                 </td>

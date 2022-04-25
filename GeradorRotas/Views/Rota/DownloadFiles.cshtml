@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Models.Arquivo>
+
+@{
+	ViewData["Title"] = "Download";
+}
+
+<h1>Download de Arquivos</h1>
+<hr />
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.NomeArquivo)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servico)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Cidade)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Data)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.NomeArquivo)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Servico)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cidade)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Data)
+				</td>
+				<td>
+					<a asp-action="Download" asp-route-id="@item.Id">Download</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
