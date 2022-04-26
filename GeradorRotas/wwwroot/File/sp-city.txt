@@ -286,7 +286,7 @@
       "Jandira",
       "Jardinópolis",
       "Jarinu",
-      "Jaú",
+      "Jau",
       "Jeriquara",
       "Joanópolis",
       "João Ramalho",
