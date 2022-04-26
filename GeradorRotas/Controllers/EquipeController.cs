@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using GeradorRotas.Frontend.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -57,7 +58,7 @@ namespace GeradorRotas.Frontend.Controllers
         {
             List<Pessoa> pessoasChoices = new();
 
-            foreach (string selPessoas in selectedPessoa)
+            foreach (string selPessoas in Request.Form["selectedPesoa"].ToList())
             {
                 Pessoa pessoa = await new ConnectToPessoaApi().GetPersonByName(selPessoas);
 
