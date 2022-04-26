@@ -54,12 +54,12 @@ else
                         @Html.DisplayFor(modelItem => item.Cidade)
                     </td>
                     <td>
-                        <select>
+                        
                         @for (var i = 0; i < item.Pessoas.Count; i++)
                         {
-                            <option value="@item.Pessoas[i].Nome">@item.Pessoas[i].Nome</option>
+                           <p>@item.Pessoas[i].Nome</p>
                         }
-                        </select>
+                        
                     </td>
                     <td>
                         <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
