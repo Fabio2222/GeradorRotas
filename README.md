@@ -7,9 +7,6 @@ O primeiro acesso o banco gera login - adm e senha - adm.
 
 O projeto não tem tratativas de erros. Precisa ser executado na seguinte sequência: login, upload, pessoa, cidade, equipe e rota.
 
-Não exibe as pessoas da equipe. Problema em equipecontrollers linha 36.
-
-
 View equipe index. Deleta pessoa de equipe, em vez de mudar status no banco de dados.
 
 Cadastro de Usuário - 
