@@ -5,9 +5,7 @@ senha - 123
 
 O primeiro acesso o banco gera login - adm e senha - adm.
 
-O projeto não tem tratativas de erros. Precisa ser executado na seguinte sequência: login, upload, pessoa, cidade, equipe e rota.
-
-View equipe index. Deleta pessoa de equipe, em vez de mudar status no banco de dados.
+O projeto não tem tratativas de erros. Precisa ser executado na seguinte sequência: fazer o login, upload excel des serviços, cadastro de pessoa, cidade é importada da planilha, cadastrar as equipes e selecionar a rota.
 
 Cadastro de Usuário - 
 Contém nome de usuário, senha e nome completo.
@@ -23,3 +21,5 @@ Contém o nome, com pelo menos 1 pessoa vinculada na equipe e a cidade ao qual e
 
 Gerador de Rota - 
 Recebe o upload de um arquivo em formato XLSX que contém os dados necessários para confecção da rota.
+
+Não funciona corretamente - View equipe index. Deleta pessoa de equipe, em vez de mudar status no banco de dados.
