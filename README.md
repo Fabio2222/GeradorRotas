@@ -17,7 +17,7 @@ Cadastro de Cidade -
 Contém o nome da cidade e o estado a que ela pertence.
 
 Cadastro de Equipe - 
-Contém o nome, com pelo menos 1 pessoa vinculada na equipe e a cidade ao qual ela está disponível.
+Contém o nome, com pelo menos 1 pessoa vinculada na equipe e a cidade ao qual ela está disponível. Cadastrar as equipes nas cidades.
 
 Gerador de Rota - 
 Recebe o upload de um arquivo em formato XLSX que contém os dados necessários para confecção da rota.
