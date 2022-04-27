@@ -237,7 +237,7 @@ namespace GeradorRotas.Frontend.Controllers
                     paragraph1.Format.LineSpacing = 15;
 
                     Paragraph paragraph2 = section.AddParagraph();
-                    TextRange tr2 = paragraph2.AppendText($"Endereço: {dictionary["ENDEREÇO"]}, {dictionary["NUMERO"]}, {dictionary["BAIRRO"]}, {dictionary["CIDADE"]}, CEP: {dictionary["CEP"]}  - {(dictionary.ContainsKey("TELEFONE 1") ? dictionary["TELEFONE 1"] : "")}");
+                    TextRange tr2 = paragraph2.AppendText($"Endereço: {dictionary["ENDEREÇO"]}, {dictionary["NUMERO"]}, {dictionary["BAIRRO"]}, {dictionary["CIDADE"]}, {dictionary["COMPLEMENTO"]}, CEP: {dictionary["CEP"]}  - {(dictionary.ContainsKey("TELEFONE 1") ? dictionary["TELEFONE 1"] : "")}");
                     tr2.CharacterFormat.FontName = "Arial";
                     paragraph2.Format.LineSpacing = 15;
 

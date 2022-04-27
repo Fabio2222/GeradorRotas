@@ -108,5 +108,7 @@ namespace GeradorRotas.Frontend.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+       
     }
 }

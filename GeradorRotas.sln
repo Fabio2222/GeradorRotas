@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorRotas.Frontend", "GeradorRotas\GeradorRotas.Frontend.csproj", "{EB6D639C-C0C8-45C2-90A8-84C4C4B0EB26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeradorRotas.Frontend", "GeradorRotas\GeradorRotas.Frontend.csproj", "{EB6D639C-C0C8-45C2-90A8-84C4C4B0EB26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{1B2F30A2-728C-4C59-9EE6-1F709586B0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{1B2F30A2-728C-4C59-9EE6-1F709586B0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiCidade", "ApiCdade\ApiCidade.csproj", "{1716F2F2-527A-49DE-9882-65A5757B51F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCidade", "ApiCdade\ApiCidade.csproj", "{1716F2F2-527A-49DE-9882-65A5757B51F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiEquipe", "ApiEquipe\ApiEquipe.csproj", "{0374A92F-F49C-45C4-927A-C28C626225F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiEquipe", "ApiEquipe\ApiEquipe.csproj", "{0374A92F-F49C-45C4-927A-C28C626225F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPessoa", "ApiPessoa\ApiPessoa.csproj", "{E7D074AF-91D9-4FBB-B0E1-B7D47122B0AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiPessoa", "ApiPessoa\ApiPessoa.csproj", "{E7D074AF-91D9-4FBB-B0E1-B7D47122B0AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiUsuario", "ApiUsuario\ApiUsuario.csproj", "{5BAF0366-4816-45CB-8768-4431CC2E7280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiUsuario", "ApiUsuario\ApiUsuario.csproj", "{5BAF0366-4816-45CB-8768-4431CC2E7280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

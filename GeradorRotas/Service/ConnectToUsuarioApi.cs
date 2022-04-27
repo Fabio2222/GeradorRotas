@@ -10,7 +10,7 @@ namespace GeradorRotas.Frontend.Service
 {
     public class ConnectToUsuarioApi
     {
-        private readonly static string _baseUri = "https://localhost:44321/api/"; //mudar
+        private readonly static string _baseUri = "https://localhost:44321/api/"; 
 
         public async Task<List<Usuario>> GetUsers()
         {
